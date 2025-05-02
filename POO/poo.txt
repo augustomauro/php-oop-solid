@@ -216,4 +216,7 @@ abstractas cuando sea conveniente.
 
 Importante: cada vez que una clase implemente una clase estara obligada a declarar como implemetar TODOS los metodos que alli esten declarados.
 
+En PHP NO SE ADMITE la herencia multiple, es decir, solo se poeude extender de una UNICA clase padre. No asi en C++ or ejemplo.
+En PHP para emular este comportamiento es que se utilizan los Traits.
+
 ---
