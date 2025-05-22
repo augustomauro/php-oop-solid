@@ -1,9 +1,11 @@
-Imaginemos una aplicacion organizada por carpetas como App\Controllers, App\Models
-y otras. Imaginemos que la app va creciendo y hay que ir importando de a uno los archivos
-nuevos que se vayan creando, tanto en Models como en Controllers.
+# AUTOLOAD
 
-A fin de evitar importar cada clase de a una, en PHP se utiliza una funcion que detecta el
-archivo por el nombre de la clase, resolviendo esto de forma automatica:
+## Que es?
+
+Imaginemos una aplicacion organizada por carpetas como App\Controllers, App\Models
+y otras. Imaginemos que la app va creciendo y hay que ir importando de a uno los archivos nuevos que se vayan creando, tanto en Models como en Controllers.
+
+A fin de evitar importar cada clase de a una, en PHP se utiliza una funcion que detecta el archivo por el nombre de la clase, resolviendo esto de forma automatica:
 
     App\Controlles\CourseController.php
     App\Models\Course.php
