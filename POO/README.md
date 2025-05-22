@@ -1,6 +1,6 @@
 Ref: https://www.youtube.com/watch?v=SI7O81GMG2A&ab_channel=BitBoss
 
-POO:
+## POO
 
 La programacion orientada a objeta se basa en crear tipos nuevos de datos a los que llamaremos Objetos.
 Para ello trataremos a nuestro codigo como un modulo con 2 partes, Propiedades y Funciones.
@@ -36,7 +36,7 @@ o llamar a sus metodos.
 
 ---
 
-Abstraccion:
+## Abstraccion
 
 Cuando nosotros hacemos una clase tenemos que seleccionar los atributos y metodos que va a tener.
 Si queremos definir que es una Cancion, no es necesario incluir todas las caracteristicas,
@@ -74,7 +74,7 @@ Esta clase nos viene muy bien para el siguiente pilar, la Encapsulacion.
 
 ---
 
-Encapsulacion:
+## Encapsulacion
 
 Nosotros podemos hacer un prorama por medio de varias clases que se comuniquen entre si, a esto se le llama 
 Modularidad. Es bastante util, si falla algo en nuestro programa es bastante mas facil de detectar donde y que
@@ -111,7 +111,7 @@ una validacion para tal fin, para que no modifique el valor e informe de tal fal
 
 ---
 
-Herencia:
+## Herencia
 
 Ahora quermos crear la clase Guerrero y Mago que tienen todos los atributos y metodos que tiene nuestra clase Personaje,
 mas algunos atributos y metodos nuevos. En vez de crear todo de nuevo, podemos reutilizar la clase Personaje con la Herencia.
@@ -120,7 +120,7 @@ A la clase que hereda se la conoce como clase Padre o Superclase a la clase here
 
 ---
 
-Polimorfismo:
+## Polimorfismo
 
 Esto permite a un metodo ser diferente segun que clase lo este usando. Es decir, puede tener muchas formas de usarse.
 Volviendo al ejemplo del Personaje, el Guerrero y el Mago, las 3 clases tienen el metodo atacar() que realizan la misma accion,
@@ -144,7 +144,7 @@ Si no utilizamos polimorfismo por herencia, tendriamos que hacer una funcion dif
 
 Ref: https://www.youtube.com/watch?v=Bj2ta9xv4cM&ab_channel=CharlyCimino
 
-Interfaz o Clase Abstracta?
+### Interfaz o Clase Abstracta?
 
 Si bien no hay un cuando usar una u otra, mas bien dependera del contexto, veamos algunos ejemplos:
 
