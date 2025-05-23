@@ -41,7 +41,9 @@ requerido aun el archivo en cuestion.
 
 Entonces primero, reemplazamos el caracter especial "\" por "/" para poder hacer require:
 
-    require_once str_replace('\\', '/', $clase) . '.php';
+```php
+<?php require_once str_replace('\\', '/', $clase) . '.php'; >
+```
 
 Tambien agregamos una validacion para saber si el archivo existe o no antes de importar, quedando:
 
