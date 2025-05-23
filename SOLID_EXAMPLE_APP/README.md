@@ -69,7 +69,7 @@ Aplicamos SOLID al dividir responsabilidades y abstraer dependencias.
 
 ```
 
-/*Discount/NoDiscount.php*/
+_Discount/NoDiscount.php_
 
 ```php
 <?php
@@ -84,7 +84,7 @@ Aplicamos SOLID al dividir responsabilidades y abstraer dependencias.
 
 ```
 
-/*Discount/BlackFridayDiscount.php*/
+_Discount/BlackFridayDiscount.php_
 
 ```php
 <?php
@@ -110,7 +110,7 @@ Aplicamos SOLID al dividir responsabilidades y abstraer dependencias.
 
 ```
 
-/*Repository/MySQLProductRepository.php*/
+_Repository/MySQLProductRepository.php_
 
 ```php
 <?php
