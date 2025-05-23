@@ -39,67 +39,85 @@ hexagonal-php/
 
 ## 1. Dominio: User.php
 
-// src/Domain/Model/User.php
-class User {
-    public function __construct(
-        public string $id,
-        public string $name,
-        public string $email
-    ) {}
-}
+```php
+<?php
+    // src/Domain/Model/User.php
+    class User {
+        public function __construct(
+            public string $id,
+            public string $name,
+            public string $email
+        ) {}
+    }
+```
 
 ## 2. Puerto de salida (Output Port): UserRepositoryInterface.php
 
-// src/Application/Port/UserRepositoryInterface.php
-interface UserRepositoryInterface {
-    public function save(User $user): void;
-}
+```php
+<?php
+    // src/Application/Port/UserRepositoryInterface.php
+    interface UserRepositoryInterface {
+        public function save(User $user): void;
+    }
+```
 
 ## 3. Caso de uso: RegisterUserUseCase.php
 
-// src/Application/UseCase/RegisterUserUseCase.php
-class RegisterUserUseCase {
-    public function __construct(private UserRepositoryInterface $repository) {}
+```php
+<?php
+    // src/Application/UseCase/RegisterUserUseCase.php
+    class RegisterUserUseCase {
+        public function __construct(private UserRepositoryInterface $repository) {}
 
-    public function execute(string $name, string $email): void {
-        $user = new User(uniqid(), $name, $email);
-        $this->repository->save($user);
+        public function execute(string $name, string $email): void {
+            $user = new User(uniqid(), $name, $email);
+            $this->repository->save($user);
+        }
     }
-}
+```
 
 ## 4. Adaptador: implementación de repositorio
 
-// src/Infrastructure/Adapter/Persistence/InMemoryUserRepository.php
-class InMemoryUserRepository implements UserRepositoryInterface {
-    private array $users = [];
+```php
+<?php
+    // src/Infrastructure/Adapter/Persistence/InMemoryUserRepository.php
+    class InMemoryUserRepository implements UserRepositoryInterface {
+        private array $users = [];
 
-    public function save(User $user): void {
-        $this->users[$user->id] = $user;
-        echo "Usuario {$user->name} guardado.\n";
+        public function save(User $user): void {
+            $this->users[$user->id] = $user;
+            echo "Usuario {$user->name} guardado.\n";
+        }
     }
-}
+```
 
 ## 5. Adaptador: entrada (puerto de entrada), tipo Controller
 
-// src/Infrastructure/Adapter/Controller/UserController.php
-class UserController {
-    public function __construct(private RegisterUserUseCase $useCase) {}
+```php
+<?php
+    // src/Infrastructure/Adapter/Controller/UserController.php
+    class UserController {
+        public function __construct(private RegisterUserUseCase $useCase) {}
 
-    public function register(array $requestData): void {
-        $this->useCase->execute($requestData['name'], $requestData['email']);
+        public function register(array $requestData): void {
+            $this->useCase->execute($requestData['name'], $requestData['email']);
+        }
     }
-}
+```
 
 ## 🧪 Main (simulación)
 
-$repo = new InMemoryUserRepository();
-$useCase = new RegisterUserUseCase($repo);
-$controller = new UserController($useCase);
+```php
+<?php
+    $repo = new InMemoryUserRepository();
+    $useCase = new RegisterUserUseCase($repo);
+    $controller = new UserController($useCase);
 
-$controller->register([
-    'name' => 'Pablo',
-    'email' => 'pablo@example.com'
-]);
+    $controller->register([
+        'name' => 'Pablo',
+        'email' => 'pablo@example.com'
+    ]);
+```
 
 
 ### ✅ Ventajas
@@ -108,3 +126,5 @@ Testeás el RegisterUserUseCase sin necesidad de tener una base de datos.
 Podés cambiar el adaptador (por ejemplo, usar MySQL en lugar de memoria) sin tocar el core.
 
 El dominio no tiene ni idea de qué framework usás.
+
+---
