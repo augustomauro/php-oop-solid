@@ -22,33 +22,43 @@ Los namespaces de PHP unicamente cubren los siguientes elementos PHP:
 
 ### Ejemplos:
 
-App\Clases\claseA.php:
+_App\Clases\claseA.php:_
 
-    <?php
+```php
+<?php
 
     class claseA {
         //
     }
 
-App\Clases\claseB.php:
+```
 
-    <?php
+_App\Clases\claseB.php:_
+
+```php
+<?php
 
     class claseB {
         //
     }
 
-App\Otros\claseA.php:
+```
 
-    <?php
+_App\Otros\claseA.php:_
+
+```php
+<?php
 
     class claseA {
         //
     }
 
-index.php:
+```
 
-    <?php
+_index.php:_
+
+```php
+<?php
 
     require_once ('App\Clases\claseA.php');
     require_once ('App\Clases\claseB.php');
@@ -56,23 +66,29 @@ index.php:
 
     $claseA = new claseA();
 
+```
+
 Esto dara un error ya que se incluyo la misma claseA 2 veces.
 
 Para solucionarlo, declareremos a traves de namespace:
 
-App\Clases\claseA.php:
+_App\Clases\claseA.php:_
 
-        <?php
+```php
+<?php
 
-        namespace App\Clases;
+    namespace App\Clases;
 
-        class claseA {
-            //
-        }
+    class claseA {
+        //
+    }
 
-App\Clases\claseB.php:
+```
 
-    <?php
+_App\Clases\claseB.php:_
+
+```php
+<?php
 
     namespace App\Clases;
 
@@ -80,9 +96,12 @@ App\Clases\claseB.php:
         //
     }
 
-App\Otros\claseA.php:
+```
 
-    <?php
+_App\Otros\claseA.php:_
+
+```php
+<?php
 
     namespace App\Otros;
 
@@ -90,9 +109,12 @@ App\Otros\claseA.php:
         //
     }
 
-index.php:
+```
 
-    <?php
+_index.php:_
+
+```php
+<?php
 
     require_once ('App\Clases\claseA.php');
     require_once ('App\Clases\claseB.php');
@@ -100,14 +122,17 @@ index.php:
 
     $claseA = new App\Clases\claseA();
 
+```
+
 Con esto solucionamos el problema de que haya 2 clases con el mismo nombre ya que provienen
 de namespaces distintos o de distintas rutas.
 
 Otra forma de instanciar la claseA puede ser:
 
-index.php:
+_index.php:_
 
-    <?php
+```php
+<?php
 
     require_once ('App\Clases\claseA.php');
     require_once ('App\Clases\claseB.php');
@@ -119,4 +144,5 @@ index.php:
     $claseA = new claseA();
     $otraClaseA = new otraClaseA();
 
+```
 ---
